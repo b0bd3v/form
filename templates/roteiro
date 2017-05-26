@@ -1,0 +1,24 @@
+# Documento de entrega para issue #{{numeroissue}}
+
+## Implantação
+
+| Tipo | Conteúdo |
+| ---- | -------- |
+| Branch | {{branch}} |
+| Ambiente | {{ambiente}} |
+| Database | {{database}} |
+| Tipo | {{tipo}} |
+| Controle | {{controle}} |
+
+#### `Funcionalidade implementada nas url de desenvolvimento:`
+
+* [{{caminho}}]({{URL}})
+
+## Alteração de Banco de Dados
+{{alteracaobanco}}
+
+## Testes Realizados ##
+
+| Passos | Resultado Esperado |
+|--------|--------------------|
+| 1. Exemplo. | Exemplo |
