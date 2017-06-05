@@ -1,0 +1,39 @@
+insert into guiche (
+  guic_nome, unid_id, guic_descricao, guic_quebra,
+  sua_id_inc, 
+  usua_id_alt, data_hora_inc, data_hora_alt, guic_host, guic_dti, 
+  guic_ativo, guic_faz_pagamento, guic_recebe_dinheiro,
+  guic_recebe_cheque, 
+  guic_recebe_cartao, guic_tipo_doc_recebe, guic_outros,
+  guic_recebe_itens_caixa, 
+  modelo_impressora, guic_gateway,
+  guic_fechamento_caixa_cartao_pendente, 
+  guic_atendimento_caixa_cartao_pendente,
+  guic_fechamento_caixa_estorno_pendente, 
+  guic_atendimento_caixa_estorno_pendente
+)
+
+select 
+  guic_nome, unid_id,
+  guic_descricao, guic_quebra,
+  usua_id_inc, 
+  usua_id_alt,
+  data_hora_inc,
+  data_hora_alt,
+  '{{HOST}}' as
+  guic_host, guic_dti, 
+  guic_ativo,
+  guic_faz_pagamento,
+  guic_recebe_dinheiro,
+  guic_recebe_cheque, 
+  guic_recebe_cartao,
+  guic_tipo_doc_recebe,
+  guic_outros,
+  guic_recebe_itens_caixa, 
+  modelo_impressora,
+  guic_gateway,
+  guic_fechamento_caixa_cartao_pendente, 
+  guic_atendimento_caixa_cartao_pendente,
+  guic_fechamento_caixa_estorno_pendente, 
+  guic_atendimento_caixa_estorno_pendente
+from guiche where guic_id = {{IDGICHE}} 
