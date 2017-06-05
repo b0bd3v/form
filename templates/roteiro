@@ -1,3 +1,4 @@
+
 # Documento de entrega para issue #{{numeroissue}}
 
 ## Implantação
@@ -22,3 +23,6 @@
 | Passos | Resultado Esperado |
 |--------|--------------------|
 | 1. Exemplo. | Exemplo |
+{{loop}}
+	| 1. {{Passo}}. | {{ResultadoEsperado}} |
+{{endloop}}
