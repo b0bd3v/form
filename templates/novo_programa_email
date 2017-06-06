@@ -1,0 +1,16 @@
+{{Destinatario}},
+
+Terminamos o desenvolvimento de um novo programa para o portal SIGA, sendo assim
+gostaríamos de solicitar a geração de um novo ID.
+
+Dados do novo programa:
+Modulo ID: {{IdModulo}}
+Nome do arquivo PHP: {{NomeArquivo}}
+Descrição do programa: {{DescricaoPrograma}}
+Path do arquivo: {{PathArquivo}}
+ID de desenvolvedor: (select pess_id from desenvolvedor limit 1)
+Descrição de ajuda: {{DescricaoAjuda}}
+Uso de sequence page: {{UsoSequencePage}}
+Nome da sequence page: {{NomeSequencePage}}
+
+Obrigado,
