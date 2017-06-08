@@ -30,6 +30,11 @@
 					</a>
 					<ul class="dropdown-menu">
 						<?php foreach($templates as $template ):?>
+							<?php 
+								if($template == '.' || $template == '..'){
+									continue;
+								}
+								?>	
 							<li>
 								<a href="#template_<?php echo $template; ?>" onclick="changeTemplate(this)" data="<?php echo $template; ?>" ><?php echo $template; ?></a>
 							</li>

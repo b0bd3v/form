@@ -5,13 +5,13 @@
 
 	preg_match_all('/{{[a-zA-Z0-9]+}}/', $arquivo, $valores);
 
-	foreach ($valores[0] as $key => $value) {
+	foreach ($valores[0] as $key => $tag) {
 		
 
-		if($value == '{{loop}}'){
+		if($tag == '{{loop}}'){
 			$in_loop = true;
 			$first_item_loop = true;
-		}elseif($value == '{{endloop}}'){
+		}elseif($tag == '{{endloop}}'){
 			$last_item_loop = true;
 		}
 
@@ -29,13 +29,15 @@
 		<?php if($in_loop == true): ?>
 			<div class="form-group">
 		<?php endif;?>
-					<label class="sr-only" for="inlineFormInput"><?php echo $value; ?></label>
+				<?php if(!Tag::isReserved())?>
+					<label class="sr-only" for="inlineFormInput"><?php echo $tag; ?></label>
 					<input
 						style="margin-top: 12px"
 						type="text"
 						onchange="refreshTemplate(this);"
 						onpaste="this.onchange();" oninput="this.onchange();"
-						class="form-control mb-2 mr-sm-2 mb-sm-0 template_item" placeholder="<?php echo $value ?>" name="<?php echo $value ?>" value="<?php echo $_GET['' . $value . '']; ?>">
+						class="form-control mb-2 mr-sm-2 mb-sm-0 template_item" placeholder="<?php echo $tag ?>" name="<?php echo $tag ?>" value="<?php echo $_GET['' . $tag . '']; ?>">
+				<?php endif; ?>
 		<?php if($in_loop == true): ?>
 			</div>
 		<?php endif;?>
@@ -50,7 +52,7 @@
 
 		<?php
 		$last_item_loop = false;
-		if($value == '{{endloop}}'){
+		if($tag == '{{endloop}}'){
 			$in_loop = false;
 		}
 	}
@@ -64,8 +66,8 @@
 
 <?php 
 $file = $arquivo;
-foreach ($_GET as $key => $value) {
-	$file = str_replace('' . $key . '', $value, $file); 
+foreach ($_GET as $key => $tag) {
+	$file = str_replace('' . $key . '', $tag, $file); 
 }
 ?>
 <br>
