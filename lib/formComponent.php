@@ -1,6 +1,5 @@
 <?php
 
-
-static class FormComponent{
+class FormComponent{
 	
 }

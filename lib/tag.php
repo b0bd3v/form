@@ -2,16 +2,26 @@
 
 class Tag extends FormComponent {
 
-	static $reservedTags = [
+	private $reservedTags = [
 			'loop',
 			'endloop',
 			'option'
 		];
-	static function isReserved($tag){
-		if(in_array(Self::reservedTags, $tag)){
+
+	public function __construct($tag){
+		$this->tag = $tag;
+	}		
+
+	function isReserved(){
+		if(in_array($this->reservedTags, $this->tag)){
 			return true;
 		}
 		return false;
+	}
+
+	public function getLabel()
+	{
+		return  ucfirst(str_replace('{{', '', str_replace('}}', '', $this->tag)));
 	}
 
 }
