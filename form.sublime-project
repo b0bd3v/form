@@ -1,0 +1,20 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "settings":
+    {
+        "xdebug": {
+            "path_mapping": {
+                // "/absolute/path/to/file/on/server" : "/absolute/path/to/file/on/computer",
+                "/var/www/html/form/" : "/var/www/html/form"
+            },
+            "url": "http://localhost/form/index.php",
+            "super_globals": true,
+            "close_on_stop": true
+        }
+    }
+}
